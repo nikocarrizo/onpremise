@@ -216,6 +216,18 @@ SENTRY_TSDB = 'sentry.tsdb.redis.RedisTSDB'
 
 SENTRY_DIGESTS = 'sentry.digests.backends.redis.RedisBackend'
 
+###########
+# EXTRA #
+###########
+
+# Sampling
+SENTRY_SAMPLE_DATA = False
+
+#CORS
+SENTRY_ALLOW_ORIGIN = "https://sentry.traffop.com"
+
+SENTRY_USE_SSL = True
+
 ################
 # File storage #
 ################
@@ -235,7 +247,7 @@ SENTRY_OPTIONS['filestore.options'] = {
 # If you're using a reverse SSL proxy, you should enable the X-Forwarded-Proto
 # header and set `SENTRY_USE_SSL=1`
 
-if env('SENTRY_USE_SSL', False):
+#if env('SENTRY_USE_SSL', False):
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
